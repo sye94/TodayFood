@@ -1,11 +1,48 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
+    </style>
+
+    <style name="Widget.IOSched.ListView.DropDown" parent="@android:style/Widget.Holo.Light.ListView.DropDown">
+        <item name="android:listSelector">?android:selectableItemBackground</item>
+        <item name="android:divider">@null</item>
+        <item name="android:dividerHeight">0.0dip</item>
+    </style>
+
+    <style name="Widget.IOSched.PopupMenu" parent="@android:style/Widget.Holo.Light.PopupMenu">
+        <item name="android:dropDownSelector">@color/light_gray</item>
+        <item name="android:popupBackground">@color/light_gray</item>
+
+    </style>
+
+    <style name="TextAppearance.LargePopupMenu" parent="@android:style/TextAppearance.Holo.Widget.PopupMenu.Large">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextAppearance.Toolbar.ActionMenu" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/toolbar_menu_text_size</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Theme.CustomToolbar" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:textColorPrimary">@color/color_background</item>
+        <item name="android:background">@color/color_background</item>
+        <item name="android:dropDownListViewStyle">@style/Widget.IOSched.ListView.DropDown</item>
+        <item name="android:listPopupWindowStyle">@style/Widget.IOSched.PopupMenu</item>
+        <item name="android:textAppearanceLargePopupMenu">@style/TextAppearance.LargePopupMenu</item>
+        <item name="actionMenuTextAppearance">@style/TextAppearance.Toolbar.ActionMenu</item>
+        <item name="actionMenuTextColor">@color/color_accent</item>
+    </style>
+
+    <style name="DefaultLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/color_line</item>
     </style>
 
 </resources>

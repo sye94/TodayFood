@@ -20,6 +20,11 @@ allprojects {
         google()
         jcenter()
     }
+
+    ext{
+        supportLibVer = "27.1.0"
+        butterKnifeLibVer = "8.8.1"
+    }
 }
 
 task clean(type: Delete) {

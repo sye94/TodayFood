@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">TodayFood</string>
+
+
+    <!--COMMON-->
+    <string name="confirm">확인</string>
+
+    <!--NETWORK-->
+    <string name="network_title">네트워크 연결</string>
+    <string name="network_check_message">네트워크를 연결해주세요.</string>
+
+
+
 </resources>

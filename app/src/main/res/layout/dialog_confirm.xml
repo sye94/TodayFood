@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/default_title_bar_height"
+            android:background="@color/color_primary"
+            android:gravity="center_vertical"
+            android:paddingEnd="@dimen/default_title_bar_text_padding"
+            android:paddingStart="@dimen/default_title_bar_text_padding"
+            android:textColor="@color/white"
+            android:textSize="@dimen/default_title_bar_text_size" />
+
+        <TextView
+            android:id="@+id/txt_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center"
+            android:padding="@dimen/cd_content_padding"
+            android:textColor="@color/color_text"
+            android:textSize="@dimen/default_text_size" />
+
+        <View style="@style/DefaultLine" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_positive"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/default_button_height"
+                android:layout_weight="1"
+                android:background="@color/color_background"
+                android:textColor="@color/color_text"
+                android:textSize="@dimen/default_text_size" />
+
+            <Button
+                android:id="@+id/btn_negative"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/default_button_height"
+                android:layout_marginStart="1dp"
+                android:layout_weight="1"
+                android:background="@color/color_background"
+                android:textColor="@color/color_text"
+                android:textSize="@dimen/default_text_size"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+
+        <View style="@style/DefaultLine" />
+
+    </LinearLayout>
+
+</layout>
