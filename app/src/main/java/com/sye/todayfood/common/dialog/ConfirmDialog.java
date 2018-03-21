@@ -1,6 +1,7 @@
 package com.sye.todayfood.common.dialog;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,17 +19,25 @@ public class ConfirmDialog extends BaseDialog<DialogConfirmBinding> implements V
 
     private static final String ARGS_TITLE = "title";
     private static final String ARGS_CONTENT = "content";
+    private static final String ARGS_POSITIVE_BUTTON = "positiveButton";
+    private static final String ARGS_NEGATIVE_BUTTON = "negativeButton";
 
     private String mTitle;
     private String mContent;
+    private String mPositiveButton;
+    private String mNegativeButton;
 
-    public static ConfirmDialog newInstance(String title, String content) {
+    private ButtonCallback mButtonCallback;
+
+    public static ConfirmDialog newInstance(String title, String content, String positiveButton, String negativeButton) {
 
         Bundle args = new Bundle();
 
         ConfirmDialog fragment = new ConfirmDialog();
         args.putString(ARGS_TITLE, title);
         args.putString(ARGS_CONTENT, content);
+        args.putString(ARGS_POSITIVE_BUTTON, positiveButton);
+        args.putString(ARGS_NEGATIVE_BUTTON, negativeButton);
         fragment.setArguments(args);
         return fragment;
     }
@@ -40,6 +49,8 @@ public class ConfirmDialog extends BaseDialog<DialogConfirmBinding> implements V
         if (null != getArguments()) {
             mTitle = getArguments().getString(ARGS_TITLE);
             mContent = getArguments().getString(ARGS_CONTENT);
+            mPositiveButton = getArguments().getString(ARGS_POSITIVE_BUTTON);
+            mNegativeButton = getArguments().getString(ARGS_NEGATIVE_BUTTON);
         }
     }
 
@@ -51,16 +62,30 @@ public class ConfirmDialog extends BaseDialog<DialogConfirmBinding> implements V
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
+
         super.onViewCreated(view, savedInstanceState);
 
-        getBinding().btnPositive.setOnClickListener(this);
-        getBinding().btnNegative.setOnClickListener(this);
-        getBinding().txtTitle.setText(mTitle);
-        getBinding().txtConfirm.setText(mContent);
+        init();
 
     }
 
-    public void setButtonCode(int code){
+    private void init(){
+
+        getBinding().btnPositive.setOnClickListener(this);
+        getBinding().btnNegative.setOnClickListener(this);
+
+        if(!TextUtils.isEmpty(mTitle)){
+            getBinding().txtTitle.setVisibility(View.VISIBLE);
+            getBinding().txtTitle.setText(mTitle);
+        }
+
+        if(!TextUtils.isEmpty(mNegativeButton)){
+            getBinding().btnNegative.setVisibility(View.VISIBLE);
+            getBinding().btnNegative.setText(mNegativeButton);
+        }
+
+        getBinding().btnPositive.setText(mPositiveButton);
+        getBinding().txtConfirm.setText(mContent);
 
     }
 
@@ -69,27 +94,19 @@ public class ConfirmDialog extends BaseDialog<DialogConfirmBinding> implements V
 
         switch (view.getId()) {
             case R.id.btn_positive:
+                mButtonCallback.callback(ButtonCode.POSITIVE);
                 break;
             case R.id.btn_negative:
+                mButtonCallback.callback(ButtonCode.NEGATIVE);
                 break;
         }
         dismiss();
     }
 
-    public enum ButtonCode{
-
-        POSITIVE(1), NEGATIVE(2);
-
-        private int dismissCode;
-
-        ButtonCode(int dismissCode){
-            this.dismissCode = dismissCode;
-        }
-
-        public int getDismissCode(){
-            return dismissCode;
-        }
+    public void setCallback(ButtonCallback buttonCallback){
+        mButtonCallback = buttonCallback;
     }
+
 }
 
 

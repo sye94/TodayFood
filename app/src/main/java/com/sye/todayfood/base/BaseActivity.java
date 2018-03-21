@@ -30,9 +30,9 @@ public abstract class BaseActivity <V extends ViewDataBinding> extends AppCompat
             @Override
             public void run() {
 
-                if(!NetworkUtil.getConnectivityStatus()){
+                if (!NetworkUtil.getConnectivityStatus()) {
 
-                    ConfirmDialog dialog = ConfirmDialog.newInstance(getString(R.string.network_title),getString(R.string.network_check_message));
+                    ConfirmDialog dialog = ConfirmDialog.newInstance(getString(R.string.network_title), getString(R.string.network_check_message), getString(R.string.confirm), null);
                     dialog.show(getSupportFragmentManager(), getString(R.string.network_title));
 
                 }
@@ -40,11 +40,6 @@ public abstract class BaseActivity <V extends ViewDataBinding> extends AppCompat
             }
         }, 1);
 
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
     }
 
     protected void setBinding(@LayoutRes int layoutResId){
