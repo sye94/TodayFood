@@ -18,7 +18,7 @@ import com.sye.todayfood.utils.NetworkUtil;
  * Created by SYE on 2018-03-16.
  */
 
-public abstract class BaseActivity <V extends ViewDataBinding> extends AppCompatActivity implements View.OnClickListener{
+public abstract class BaseActivity <V extends ViewDataBinding> extends AppCompatActivity {
 
     private static final String TAG = BaseActivity.class.getSimpleName();
 

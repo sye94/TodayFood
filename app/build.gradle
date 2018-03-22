@@ -33,6 +33,8 @@ dependencies {
 
     compile "com.android.support:design:${supportLibVer}"
 
+    compile group: 'com.kakao.sdk', name: 'usermgmt', version: project.KAKAO_SDK_VERSION
+
 //    implementation "com.jakewharton:butterknife:${butterKnifeLibVer}"
 //    annotationProcessor "com.jakewharton:butterknife-compiler:${butterKnifeLibVer}"
 

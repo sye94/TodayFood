@@ -41,6 +41,16 @@ allprojects {
         espressoVersion = '3.0.1'
         roomVersion = "1.0.0"
     }
+
+}
+
+rootProject.version = KAKAO_SDK_VERSION
+
+subprojects {
+    repositories {
+        mavenCentral()
+        maven { url 'http://devrepo.kakao.com:8088/nexus/content/groups/public/' }
+    }
 }
 
 task clean(type: Delete) {

@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">TodayFood</string>
 
+    <string name="kakao_app_key">6ae3fc32311a61fb13e915a9aa8da17e</string>
+
 
     <!--COMMON-->
     <string name="confirm">확인</string>
