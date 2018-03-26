@@ -4,9 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.view.Gravity;
 import android.view.MenuItem;
-import android.view.View;
 
-import com.sye.todayfood.base.BaseActivity;
+import com.sye.todayfood.common.BaseActivity;
 import com.sye.todayfood.databinding.ActivityMainBinding;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding> {

@@ -1,4 +1,4 @@
-package com.sye.todayfood.utils;
+package com.sye.todayfood.common;
 
 import android.support.v4.app.Fragment;
 

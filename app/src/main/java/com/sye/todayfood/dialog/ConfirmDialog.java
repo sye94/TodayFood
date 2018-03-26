@@ -1,4 +1,4 @@
-package com.sye.todayfood.common.dialog;
+package com.sye.todayfood.dialog;
 
 import android.os.Bundle;
 import android.text.TextUtils;

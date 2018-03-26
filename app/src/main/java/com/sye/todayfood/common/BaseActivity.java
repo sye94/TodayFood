@@ -1,17 +1,15 @@
-package com.sye.todayfood.base;
+package com.sye.todayfood.common;
 
 import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
 import com.sye.todayfood.R;
-import com.sye.todayfood.common.dialog.ConfirmDialog;
+import com.sye.todayfood.dialog.ConfirmDialog;
 import com.sye.todayfood.utils.NetworkUtil;
 
 /**

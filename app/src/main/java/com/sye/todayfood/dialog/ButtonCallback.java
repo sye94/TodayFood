@@ -1,4 +1,4 @@
-package com.sye.todayfood.common.dialog;
+package com.sye.todayfood.dialog;
 
 /**
  * Created by SYE on 2018-03-21.
